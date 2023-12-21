@@ -8,8 +8,6 @@ const Certificate = () => {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cert || Seer Interactive</title>
       </Head>
       <PageNavbar title="Cert" />

@@ -5,7 +5,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 const PageNavbar = ({title, url}:any) => {
   return (
     <nav className="bg-[#2293e6] text-[#fff] text-[20px] font-bold flex items-center justify-between px-[12px] py-[8px]">
-      <Link href={url}>
+      <Link href={"/"}>
         <MdArrowBackIosNew />
       </Link>
       <h1>{title}</h1>
