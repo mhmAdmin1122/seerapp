@@ -2,26 +2,247 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  user-select: none;
 }
+/* Layout */
+.layout-gradient, .uperBox {
+  background-image: linear-gradient(56deg, #00a6f6, #f4abc2, #ff7000);
+}
+.layout-solid{
+  @apply bg-[#c5e7ff];
+}
+/* Navbar */
+.header-main {
+  @apply w-[100%] bg-[#2891e6] text-[#fff] py-[10px] px-[15px] font-medium text-[20px] flex items-center justify-between;
+}
+.logo-box img {
+  @apply w-[53.99px] h-[25px];
+}
+.profile-box img {
+  @apply w-[25px] h-[25px];
+}
+/* Navbar */
+/* Notification-navbar */
+.news-notification {
+  @apply bg-[#00000066] w-[100%] px-[15px] flex items-center gap-3 py-[8px] text-[#fff];
+}
+.news-notification img {
+  @apply w-[20px] h-[20px];
+}
+/* Notification-navbar */
+/* Home-page */
+/* .Home-page {
+  @apply px-[15px] py-[12px];
+} */
+/* Home-page */
+/* triggerBtn */
+.triggerBtnBox {
+  @apply grid justify-center justify-items-center w-full my-[20px];
+}
+.triggerBtn {
+  @apply flex w-[500px] justify-center flex-wrap my-[12px] gap-[40px];
+}
+.triggerBtn a,
+.triggerBtn div {
+  @apply grid w-[90px] justify-items-center;
+}
+.triggerBtn a h2,
+.triggerBtn div h2 {
+  @apply grid w-[84px] justify-items-center;
+}
+.triggerBtn a div,
+.triggerBtn div div {
+  @apply w-[60px] h-[60px] bg-[#fff] rounded-full p-[12px] flex justify-center items-center;
+}
+.triggerBtn a div img .triggerBtn div div img {
+  @apply w-[40px] h-[40px];
+}
+/* triggerBtn */
+
+/* levelShortDetail */
+.levelShortDetail {
+  @apply font-extrabold text-[16px];
+}
+.levelImages img {
+  @apply w-[60px] h-[60px] p-[5px] border-2 border-[transparent];
+}
+.levelactive {
+  @apply border-2 !border-black rounded-[12px];
+}
+/* levelShortDetail */
+
+/* Footer Bar */
+footer {
+  @apply py-[5px] w-[100%] bottom-0 left-0 fixed;
+}
+footer div {
+  @apply flex justify-around items-center w-[100%];
+}
+footer div a {
+  @apply grid justify-items-center items-center;
+}
+footer div a div img {
+  @apply w-[23px] h-[23px];
+}
+footer div a h2 {
+  @apply text-[#8899e3] text-[16px];
+}
+.startingIco-linker {
+  @apply relative;
+}
+.startingIco-linker div {
+  @apply w-[80px] h-[80px] rounded-full bg-[#fff] absolute -top-[55px];
+}
+.startingIco-linker img {
+  @apply !w-[40px] h-[40px];
+}
+.startingIco-linker h2 {
+  @apply pt-[26px];
+}
+/* Footer Bar */
+
+/* termForm, eventForm */
+.termForm,
+.FaqForm,
+.aboutForm,
+.eventForm {
+  @apply text-[16px] font-bold w-[345px] h-[450px] px-4 py-6 rounded-[12px] text-[#fff];
+  background-image: linear-gradient(180deg, #1e5364, 50%, #061638);
+}
+.rules,
+.faq_question,
+.eventPic,
+.aboutPic {
+  @apply overflow-scroll overflow-x-hidden;
+}
+.rules::-webkit-scrollbar,
+.faq_question::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.notification_Box::-webkit-scrollbar,
+.aboutPic::-webkit-scrollbar,
+.eventPic::-webkit-scrollbar {
+  @apply w-[2px];
+}
+.rules::-webkit-scrollbar-thumb,
+.faq_question::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.aboutPic::-webkit-scrollbar-thumb,
+.notification_Box::-webkit-scrollbar-thumb,
+.eventPic::-webkit-scrollbar-thumb {
+  @apply w-[2px];
+}
+.rules::-webkit-scrollbar-track,
+.faq_question::-webkit-scrollbar-track,
+.notification_Box::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.aboutPic::-webkit-scrollbar-track,
+.eventPic::-webkit-scrollbar-track {
+  @apply w-[2px];
+}
+/* termForm */
+/* vip-level-full-detail-cards */
+.full_detail_cards {
+  @apply bg-[#fff] rounded-[10px] px-[20px] py-[25px];
+}
+.card_head {
+  @apply flex items-center mb-[12px] gap-2;
+}
+.card_img_Box img {
+  @apply w-[50px] h-[50px];
+}
+.title_detail {
+  @apply relative;
+}
+.title_detail h2 {
+  @apply text-[#530013] text-[18px] font-bold;
+}
+.title_detail h3 {
+  @apply text-[#000] text-[18px] font-medium;
+}
+.level_card_body {
+  @apply text-[#818181] text-[18px] font-bold;
+}
+.badge {
+  @apply absolute top-[0px] -right-[20px] text-[12px] font-bold text-[#999] border-[1px] border-[#999] py-[2px] px-[8px] rounded-[3px];
+}
+
+/* vip-level-full-detail-cards */
+
+/* Recharge */
+.rech-header-box,
+.Withdraw-header-box {
+  @apply flex justify-around items-center w-[100%] text-[20px] font-bold text-[#8aaac3] bg-[transparent] border-b-[1px] border-[#cddfec] py-[10px];
+}
+.total_amount {
+  @apply w-[100%] text-[#fff] text-[20px] font-bold px-[15px] py-[30px] rounded-[10px] text-center;
+  background-image: linear-gradient(116deg, #00a6f6, #f4abc2, #ff7000);
+}
+.total_amount h3 {
+  @apply text-[14px];
+}
+.cards_amount_detail {
+  @apply bg-[#fff] text-[#9a9a9a] w-[105px] h-[100px] rounded-[12px] grid justify-items-center items-center py-[20px];
+}
+.cards_amount_detail_active {
+  @apply bg-[#0d1133] text-[#fff] !font-bold w-[105px] h-[100px] rounded-[12px] grid justify-items-center items-center py-[20px];
+}
+.cards_amount_detail h1,
+.cards_amount_detail_active h1 {
+  @apply text-[18px] font-bold;
+}
+.cards_amount_detail h3,
+.cards_amount_detail_active h3 {
+  @apply text-[12px] font-medium;
+}
+.typer_amount {
+  @apply flex items-center gap-[20px] bg-[#fff] px-[20px] py-[8px] rounded-[12px];
+}
+.typer_amount h1 {
+  @apply text-[18px] font-bold;
+}
+.typer_amount input {
+  @apply px-[20px] py-[12px] outline-none;
+}
+.submit_Btn_Recharge {
+  @apply h-[50px] flex items-center justify-center text-[#fff] rounded-[12px] text-[20px] font-bold w-[60%];
+  background-image: linear-gradient(180deg, #26d3dc, 50%, #5983e8);
+}
+.customer_service_link a {
+  @apply bg-[#fff] px-[20px] py-[10px] flex justify-center items-center w-[30%] rounded-md shadow-lg shadow-[#303030];
+}
+/* Recharge */
+/* Withdraw */
+.withdraw-total_amount {
+  @apply w-[100%] text-[#fff] px-[15px] py-[30px] rounded-[10px] grid justify-items-start gap-5;
+  background-image: linear-gradient(116deg, #00a6f6, #f4abc2, #ff7000);
+}
+.withdraw-total_amount h2{
+  @apply text-[20px] font-bold;
+}
+.withdraw-total_amount h3 {
+  @apply text-[14px] font-bold;
+}
+.withdraw-total_amount p {
+  @apply text-[14px] font-medium;
+}
+/* Withdraw */
+/* SignIn_Form */
+.formBox{
+  @apply grid justify-center items-center w-full py-[30px];
+  background-image: linear-gradient(110deg, #e66361, #612727, #84cc84);
+
+}
+.SignIn_Form{
+  @apply w-[500px] h-auto text-[#fff] px-[20px] py-[30px] rounded-[12px] bg-[#6969697a] grid gap-4 shadow-lg shadow-[#e2e2e288];
+}
+.SignIn_Form div{
+  @apply flex items-center;
+}
+.gender{
+  @apply bg-[#fff] text-[#999] w-[250px] px-[12px] py-[10px] rounded-[6px] justify-between gap-4;
+}
+.SignIn_Form div input{
+  @apply px-[12px] py-[10px] rounded-l-[6px] outline-none text-[#000];
+}
+/* SignIn_Form */
