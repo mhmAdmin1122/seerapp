@@ -1,201 +1,101 @@
-import axios from "axios";
+import Head from "next/head";
 import Link from "next/link";
 import React, { useState } from "react";
+import { MdAlternateEmail } from "react-icons/md";
 import {
   FaUser,
-  FaPhoneSquare,
+  FaPhone,
   FaRegMoneyBillAlt,
-  FaLock,
-  FaCheckSquare,
+  FaFingerprint,
+  FaHandMiddleFinger,
   FaGifts,
   FaRegEdit,
 } from "react-icons/fa";
+import FormLayout from "../FormLayout/FormLayout";
 
 const SignIn = () => {
-  const [userName, setUserName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [withPassword, setWithPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const [confPassword, setConfPassword] = useState("");
-  const [gender, setGender] = useState("");
-  const [inviteCode, setInviteCode] = useState("");
 
-  async function regestration(ev: any) {
-    ev.preventDefault();
-    const data = {
-      userName,
-      phoneNumber,
-      withPassword,
-      password,
-      confPassword,
-      gender,
-      inviteCode,
-    };
-    const response: any = await axios.post("/api/regestration", data);
-    if (response.ok) {
-      alert("Form submission failed.");
-    } else {
-      setUserName("");
-      setPhoneNumber("");
-      setWithPassword("");
-      setPassword("");
-      setConfPassword("");
-      setGender("");
-      setInviteCode("");
-    }
-    console.log(gender);
-  }
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   return (
     <>
-      <head>
-        <title>Regester</title>
-      </head>
-      <body>
-        <div className="formBox">
-          <form
-            className="SignIn_Form grid justify-items-center w-full"
-            onSubmit={regestration}
-          >
-            <div className="name-form gap-[4px] justify-center w-[100%]">
-              <FaRegEdit className="text-[40px]" />
-              <h1 className="text-[30px] underline">Regestration</h1>
-            </div>
-
-            {/* username */}
-            <div className="username">
-              <input
-                type="text"
-                placeholder="Username"
-                id="u_name"
-                value={userName}
-                onChange={(ev) => setUserName(ev.target.value)}
-                required
-              />
-              <label htmlFor="u_name">
-                <FaUser className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* Phone */}
-            <div className="phonenumber">
-              <input
-                type="tell"
-                placeholder="Phone"
-                id="phone"
-                value={phoneNumber}
-                onChange={(ev) => setPhoneNumber(ev.target.value)}
-                required
-              />
-              <label htmlFor="phone">
-                <FaPhoneSquare className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* withdraw password */}
-            <div className="w_password">
-              <input
-                type="password"
-                placeholder="Withdraw Password"
-                id="w_password"
-                value={withPassword}
-                onChange={(ev) => setWithPassword(ev.target.value)}
-                required
-              />
-              <label htmlFor="w_password">
-                <FaRegMoneyBillAlt className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* password */}
-            <div className="password">
-              <input
-                type="password"
-                placeholder="Password"
-                id="password"
-                value={password}
-                onChange={(ev) => setPassword(ev.target.value)}
-                required
-              />
-              <label htmlFor="password">
-                <FaLock className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* confirm password */}
-            <div className="c_password">
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                id="c_password"
-                value={confPassword}
-                onChange={(ev) => setConfPassword(ev.target.value)}
-                required
-              />
-              <label htmlFor="c_password">
-                <FaCheckSquare className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* gender */}
-            <div className="gender">
-              <label htmlFor="">Gender</label>
-              <select
-                className="outline-none"
-                value={gender}
-                onChange={(ev) => setGender(ev.target.value)}
-              >
-                <option value="">Male</option>
-                <option value="">Female</option>
-                <option value="">Other</option>
-              </select>
-            </div>
-
-            {/* Invite Code */}
-            <div className="I_Code">
-              <input
-                type="text"
-                placeholder="Invite Code"
-                id="I_Code"
-                value={inviteCode}
-                onChange={(ev) => setInviteCode(ev.target.value)}
-              />
-              <label htmlFor="I_Code">
-                <FaGifts className="text-[44px] rounded-r-[6px] bg-[#fff] text-[#999] p-[5px]" />
-              </label>
-            </div>
-
-            {/* agreement line */}
-            <div className="gap-2">
-              <input
-                type="checkbox"
-                required
-                id="t_c"
-                className="h-6 w-6 text-indigo-600 rounded-md focus:ring-indigo-500"
-              />
-              <label htmlFor="t_c">I agree with the Term & Condition</label>
-            </div>
-
-            {/* sub btn */}
-            <div className="submit_btn">
-              <button className="bg-[#0011ff] text-[#fff] px-[20px] py-[12px] rounded-md font-bold">
-                Regester Now
-              </button>
-            </div>
-
-            {/* login link */}
-            <p>
-              Already Have an account?{" "}
-              <Link
-                href="/"
-                className="underline text-[#00ff37e0] text-[24px] font-bold transition-all ease-in-out duration-1000 hover:text-[#ffd000d5]"
-              >
-                Login
+      <Head>
+        <title>Regester || Seer Interactive</title>
+      </Head>
+      <FormLayout hight={"h-auto"}>
+        <h1 className="text-center text-[26px] font-bold">Regester</h1>
+        <h2 className="text-center text-[16px] font-medium text-[#999]">
+          Already have an account?{" "}
+          <Link href="/Regestration/Login" className="text-[#ff0000]">
+            LogIn
+          </Link>
+        </h2>
+        <form className="regesterrationForm grid justify-items-center">
+          <div>
+            <input type="text" className="username" placeholder="Username" />
+            <FaUser />
+          </div>
+          <div>
+            <input type="email" className="email" placeholder="Email" />
+            <MdAlternateEmail />
+          </div>
+          <div>
+            <input type="tell" className="phone" placeholder="Phone" />
+            <FaPhone />
+          </div>
+          <div>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="Password"
+              placeholder="Password"
+            />
+            <span onClick={togglePasswordVisibility}>
+              {showPassword ? <FaFingerprint className="text-[#999]" /> : <FaFingerprint className="text-[#ff0000]" />}
+            </span>
+          </div>
+          <div>
+          <input
+              type="password"
+              className="Password"
+              placeholder="Confirm Password"
+            />
+            <FaHandMiddleFinger />
+          </div>
+          <div>
+            <input
+              type="password"
+              className="wpassword"
+              placeholder="Withdraw Password"
+            />
+            <FaRegMoneyBillAlt />
+          </div>
+          <div>
+            <input
+              type="text"
+              className="InviteCode"
+              placeholder="Invite Code"
+            />
+            <FaGifts />
+          </div>
+          <span className="cline flex items-center gap-2">
+            <input type="checkBox" id="cline" className="confirmLine" />
+            <label htmlFor="cline">
+              I agree with the{" "}
+              <Link href="/" className="text-[#ff0000]">
+                Term & condition
               </Link>
-            </p>
-          </form>
-        </div>
-      </body>
+            </label>
+          </span>
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </FormLayout>
     </>
   );
 };

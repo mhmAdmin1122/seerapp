@@ -6,10 +6,11 @@ body {
   user-select: none;
 }
 /* Layout */
-.layout-gradient, .uperBox {
+.layout-gradient,
+.uperBox {
   background-image: linear-gradient(56deg, #00a6f6, #f4abc2, #ff7000);
 }
-.layout-solid{
+.layout-solid {
   @apply bg-[#c5e7ff];
 }
 /* Navbar */
@@ -217,7 +218,7 @@ body::-webkit-scrollbar-track,
   @apply w-[100%] text-[#fff] px-[15px] py-[30px] rounded-[10px] grid justify-items-start gap-5;
   background-image: linear-gradient(116deg, #00a6f6, #f4abc2, #ff7000);
 }
-.withdraw-total_amount h2{
+.withdraw-total_amount h2 {
   @apply text-[20px] font-bold;
 }
 .withdraw-total_amount h3 {
@@ -228,21 +229,22 @@ body::-webkit-scrollbar-track,
 }
 /* Withdraw */
 /* SignIn_Form */
-.formBox{
-  @apply grid justify-center items-center w-full py-[30px];
-  background-image: linear-gradient(110deg, #e66361, #612727, #84cc84);
-
+.regesterrationForm div {
+  @apply bg-[#fff] text-[#414141] border-[1px] border-gray-100 shadow-md shadow-gray-300 px-[12px] py-[8px] rounded-[4px] flex items-center justify-between my-2;
 }
-.SignIn_Form{
-  @apply w-[500px] h-auto text-[#fff] px-[20px] py-[30px] rounded-[12px] bg-[#6969697a] grid gap-4 shadow-lg shadow-[#e2e2e288];
+.regesterrationForm div input{
+  @apply text-[20px] font-normal outline-none;
 }
-.SignIn_Form div{
-  @apply flex items-center;
+.regesterrationForm div svg{
+  @apply text-[#999] transition-all ease-in-out duration-1000 hover:text-[#ff0000] text-[20px];
 }
-.gender{
-  @apply bg-[#fff] text-[#999] w-[250px] px-[12px] py-[10px] rounded-[6px] justify-between gap-4;
+.cline{
+  @apply my-2 text-[16px] font-medium text-[#999];
 }
-.SignIn_Form div input{
-  @apply px-[12px] py-[10px] rounded-l-[6px] outline-none text-[#000];
+.cline input{
+  @apply w-[20px] h-[20px];
+}
+.regesterrationForm button{
+  @apply bg-[#ff0000] text-[20px] text-[#fff] font-bold px-[18px] py-[8px] rounded-[6px] my-2;
 }
 /* SignIn_Form */
