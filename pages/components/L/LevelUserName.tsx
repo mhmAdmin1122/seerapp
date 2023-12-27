@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Level1pic from '../../../public/img/VIP1.png'
+import Level1pic from '@/public/img/VIP1.png'
 
 const LevelUserName = () => {
   return (

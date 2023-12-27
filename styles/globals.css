@@ -229,7 +229,7 @@ body::-webkit-scrollbar-track,
 }
 /* Withdraw */
 /* SignIn_Form */
-.regesterrationForm div {
+.regesterrationForm div{
   @apply bg-[#fff] text-[#414141] border-[1px] border-gray-100 shadow-md shadow-gray-300 px-[12px] py-[8px] rounded-[4px] flex items-center justify-between my-2;
 }
 .regesterrationForm div input{
@@ -244,7 +244,7 @@ body::-webkit-scrollbar-track,
 .cline input{
   @apply w-[20px] h-[20px];
 }
-.regesterrationForm button{
+.regesterrationForm .formbtn{
   @apply bg-[#ff0000] text-[20px] text-[#fff] font-bold px-[18px] py-[8px] rounded-[6px] my-2;
 }
 /* SignIn_Form */
